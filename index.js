@@ -8,6 +8,10 @@ app.use(cors({
     methods: ['GET', 'POST', 'OPTIONS'],  // allow preflight
     allowedHeaders: ['Content-Type']
 }));
+app.use(cors({
+  origin: '*',  // Allow all origins (for testing)
+  // OR better: origin: 'https://prismatic-diefenbachia-2c865d.netlify.app'  // your exact Netlify URL
+}));
 app.use(express.json());
 
 app.get('/api/news', async (req, res) => {
